@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #343a40;
+        }
+
+        .card {
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background-color: #343a40;
+            color: #fff;
+            font-weight: bold;
+            border-bottom: none;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+
+        .table {
+            font-size: 0.9rem;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
+
+        .no-underline-button {
+        text-decoration: none;
+        }
+
+    </style>
+    <title>Job Board Dashboard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">Job Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html" class="btn btn-primary no-underline-button">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h3>Job Board Dashboard</h3>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title">Total Jobs</h5>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-text text-primary">150</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title">Total Candidates</h5>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-text text-success">300</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="card-title">Latest Jobs</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Company</th>
+                            <th>Date Posted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web Developer</td>
+                            <td>ABC Company</td>
+                            <td>May 20, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Graphic Designer</td>
+                            <td>XYZ Agency</td>
+                            <td>May 18, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Manager</td>
+                            <td>123 Corporation</td>
+                            <td>May 15, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>User Authentication</td>
+                            <td>123 Corporation</td>
+                            <td>May 12, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admin Panel</td>
+                            <td>ABC Agency</td>
+                            <td>May 2, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Fetching Data from an API</td>
+                            <td>KAI Company</td>
+                            <td>May 23, 2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Get the total job count element
+        var totalJobsElement = document.querySelector('.card-text.text-primary');
+        
+        // Update the total job count
+        function updateTotalJobsCount(count) {
+          totalJobsElement.textContent = count;
+        }
+        
+        // Get the total candidate count element
+        var totalCandidatesElement = document.querySelector('.card-text.text-success');
+        
+        // Update the total candidate count
+        function updateTotalCandidatesCount(count) {
+          totalCandidatesElement.textContent = count;
+        }
+        
+        // Get the latest jobs table body
+        var latestJobsTableBody = document.querySelector('.table tbody');
+        
+        // Add a new row to the latest jobs table
+        function addLatestJobRow(title, company, datePosted) {
+          var row = document.createElement('tr');
+          row.innerHTML = '<td>' + title + '</td><td>' + company + '</td><td>' + datePosted + '</td>';
+          latestJobsTableBody.appendChild(row);
+        }
+        
+        // Example usage of the functions
+        
+        // Update the total job count to 200
+        updateTotalJobsCount(200);
+        
+        // Update the total candidate count to 400
+        updateTotalCandidatesCount(400);
+        
+        // Add a new job row to the latest jobs table
+        addLatestJobRow('New Job', 'ACME Company', 'June 15, 2023');
+      </script>
+      
+</body>
+
+</html>
